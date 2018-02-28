@@ -1,2 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+a, input, li, ol, p, ul {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+a, a>em, input, input>em, li, li>em, ol, ol>em, p, p>em, ul, ul>em {
+  letter-spacing: .3px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}

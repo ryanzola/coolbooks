@@ -1,0 +1,22 @@
+.login {
+  background: #E52F30;
+  color: #fafafa;
+  &:hover {
+    background: #B72C2D;
+  }
+}
+
+.logout {
+  background: rgb(41, 168, 168);
+  color: #fafafa;
+  &:hover {
+    background: teal;
+  }
+}
+
+.login, .logout {
+  border: none;
+  height: 50px;
+  width: 100%;
+  font-size: 1.05em;
+}
