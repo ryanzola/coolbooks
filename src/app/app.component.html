@@ -6,19 +6,19 @@
           <mat-icon>menu</mat-icon>
       </button>
   
-      <img class="logo" src="../assets/SVG/logo.svg">
+      <img routerLink="/" class="logo" src="../assets/SVG/logo.svg">
   </mat-toolbar-row>
 </mat-toolbar>
 
 <mat-drawer-container class="container" (click)="close()">
   <mat-drawer class="drawer" mode="side" opened="{{isOpen}}">
       <div class="img-container">
-        <img class="crest" src="../favicon.ico">
+        <img routerLink="/" class="crest" src="../favicon.ico">
       </div>
       <app-auth></app-auth>
       <mat-list class="drawer-list" role="list" *ngIf="auth.isAuthenticated()">
         <mat-list-item class="drawer-item" role="listitem">
-          <a href="#" class="drawer-item-link level-1">getting started</a>
+          <a routerLink="/books" class="drawer-item-link level-1">books</a>
         </mat-list-item>
         <mat-list-item class="drawer-item" role="listitem">
           <button class="drawer-item-link drawer-item-button level-1">

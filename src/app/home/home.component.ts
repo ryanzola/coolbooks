@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RestService } from '../rest.service';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
 
-  constructor() {
+  constructor(private rest: RestService) {
 
    }
 
   ngOnInit() {
+    this.rest.getBooksList().subscribe(
+      data => console.log(data),
+      error => console.log(error),
+      () => console.log('done')
+    )
   }
 
 }

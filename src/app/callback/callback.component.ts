@@ -14,9 +14,9 @@ export class CallbackComponent implements OnInit {
 
   ngOnInit() {
     if(this.auth.isAuthenticated()) {
-      setTimeout(() => {
-        this.router.navigate(['/'])
-      }, 1000);
+      //setTimeout(() => {
+        this.router.navigate([''])
+      //}, 1000);
     }
   }
 }

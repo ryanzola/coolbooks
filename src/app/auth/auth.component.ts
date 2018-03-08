@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './auth.service';
-import * as Auth0Lock from 'auth0-lock'
 
 @Component({
   selector: 'app-auth',
