@@ -12,6 +12,7 @@ export class AppComponent {
 
   constructor(public auth: AuthService) {
     this.isOpen = true;
+    this.auth.logout();
     this.auth.handleAuthentication();
     this.auth.isAuthenticated();
     this.avatar = localStorage.getItem('avatar');

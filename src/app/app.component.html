@@ -8,9 +8,21 @@
       
       <img routerLink="/" class="logo" src="../assets/SVG/logo.svg">
       <span class="filler"></span>
-      <div *ngIf="auth.isAuthenticated(); then userSm else login">?</div>
-      <ng-template #login></ng-template>
-      <ng-template #userSm><img style="height: 40px; width: 40px; border-radius: 50%" src="{{avatar}}"></ng-template>
+
+      <button class="menu-button" mat-button [matMenuTriggerFor]="appMenu">
+          <div *ngIf="auth.isAuthenticated(); then userSm else login">?</div>
+          <ng-template #login></ng-template>
+          <ng-template #userSm>
+            <img style="height: 40px; width: 40px; border-radius: 50%" src="{{avatar}}">
+            <mat-icon><i class="material-icons">keyboard_arrow_down</i></mat-icon>
+          </ng-template>
+          
+      </button>
+
+      <mat-menu #appMenu="matMenu" [overlapTrigger]="false">
+          <button mat-menu-item routerLink="/profile">Profile</button>
+          <button mat-menu-item (click)="auth.logout()">Log out</button>
+      </mat-menu>
 
   </mat-toolbar-row>
 </mat-toolbar>

@@ -21,9 +21,10 @@ import { AuthService } from './auth/auth.service';
 import { RestService } from './rest.service';
 import { BooksComponent } from './books/books.component';
 import { InputComponent } from './input/input.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
-  declarations: [AppComponent, AuthComponent, HomeComponent, CallbackComponent, BooksComponent, InputComponent],
+  declarations: [AppComponent, AuthComponent, HomeComponent, CallbackComponent, BooksComponent, InputComponent, ProfileComponent],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
