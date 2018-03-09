@@ -20,9 +20,10 @@ import { CallbackComponent } from './callback/callback.component';
 import { AuthService } from './auth/auth.service';
 import { RestService } from './rest.service';
 import { BooksComponent } from './books/books.component';
+import { InputComponent } from './input/input.component';
 
 @NgModule({
-  declarations: [AppComponent, AuthComponent, HomeComponent, CallbackComponent, BooksComponent],
+  declarations: [AppComponent, AuthComponent, HomeComponent, CallbackComponent, BooksComponent, InputComponent],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,

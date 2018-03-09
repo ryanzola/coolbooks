@@ -13,7 +13,7 @@ export class AuthService {
     responseType: 'token id_token',
     audience: 'https://ryanzola.auth0.com/userinfo',
     redirectUri: 'http://localhost:4200/callback',
-    scope: 'openid'
+    scope: 'openid profile email'
   });
 
   constructor(public router: Router) {}
@@ -32,11 +32,13 @@ export class AuthService {
   }
 
   private setSession(authResult): void {
+    console.log(authResult);
     // Set the time that the Access Token will expire at
     const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
     localStorage.setItem('access_token', authResult.accessToken);
     localStorage.setItem('id_token', authResult.idToken);
     localStorage.setItem('expires_at', expiresAt);
+    localStorage.setItem('avatar', authResult.idTokenPayload.picture)
   }
 
   public isAuthenticated(): boolean {

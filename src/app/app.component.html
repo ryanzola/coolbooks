@@ -5,20 +5,27 @@
       <button class="menu-button" mat-button (click)="isOpen = !isOpen">
           <mat-icon>menu</mat-icon>
       </button>
-  
+      
       <img routerLink="/" class="logo" src="../assets/SVG/logo.svg">
+      <span class="filler"></span>
+      <div *ngIf="auth.isAuthenticated(); then userSm else login">?</div>
+      <ng-template #login></ng-template>
+      <ng-template #userSm><img style="height: 40px; width: 40px; border-radius: 50%" src="{{avatar}}"></ng-template>
+
   </mat-toolbar-row>
 </mat-toolbar>
 
-<mat-drawer-container class="container" (click)="close()">
+<mat-drawer-container class="container">
   <mat-drawer class="drawer" mode="side" opened="{{isOpen}}">
       <div class="img-container">
-        <img routerLink="/" class="crest" src="../favicon.ico">
+        <div *ngIf="auth.isAuthenticated(); then user else crest">?</div>
+        <ng-template #crest><img routerLink="/" class="crest" src="../favicon.ico"></ng-template>
+        <ng-template #user><img routerLink="/" class="user-avatar" src="{{avatar}}"></ng-template>
       </div>
       <app-auth></app-auth>
       <mat-list class="drawer-list" role="list" *ngIf="auth.isAuthenticated()">
-        <mat-list-item class="drawer-item" role="listitem">
-          <a routerLink="/books" class="drawer-item-link level-1">books</a>
+        <mat-list-item routerLink="/books" class="drawer-item" role="listitem">
+          <a class="drawer-item-link level-1">books</a>
         </mat-list-item>
         <mat-list-item class="drawer-item" role="listitem">
           <button class="drawer-item-link drawer-item-button level-1">

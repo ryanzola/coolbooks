@@ -7,14 +7,17 @@ import { AuthService } from '../app/auth/auth.service'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
- 
+  avatar: string
   isOpen: boolean;
 
   constructor(public auth: AuthService) {
     this.isOpen = true;
     this.auth.handleAuthentication();
+    this.auth.isAuthenticated();
+    this.avatar = localStorage.getItem('avatar');
   }
 
+  // listener to close the drawer on click anywhere on the page. commented out bc annoying.
   close() {
     if (this.isOpen) {
       this.isOpen = false;

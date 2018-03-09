@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RestService } from '../rest.service';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -7,18 +8,7 @@ import { RestService } from '../rest.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  constructor(private rest: RestService, private auth: AuthService) {}
 
-
-  constructor(private rest: RestService) {
-
-   }
-
-  ngOnInit() {
-    this.rest.getBooksList().subscribe(
-      data => console.log(data),
-      error => console.log(error),
-      () => console.log('done')
-    )
-  }
-
+  ngOnInit() {}
 }
